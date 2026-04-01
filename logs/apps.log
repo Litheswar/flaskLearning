@@ -1,0 +1,93 @@
+2026-03-29 10:45:10,112  -  INFO  -  [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2026-03-29 10:45:10,112  -  INFO  -  [33mPress CTRL+C to quit[0m
+2026-03-29 10:45:10,116  -  INFO  -   * Restarting with stat
+2026-03-29 10:45:10,601  -  WARNING  -   * Debugger is active!
+2026-03-29 10:45:10,601  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:45:29,431  -  DEBUG  -  Test route accessed
+2026-03-29 10:45:29,432  -  INFO  -  127.0.0.1 - - [29/Mar/2026 10:45:29] "GET /test HTTP/1.1" 200 -
+2026-03-29 10:45:29,573  -  INFO  -  127.0.0.1 - - [29/Mar/2026 10:45:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2026-03-29 10:45:41,632  -  INFO  -  Home route accessed
+2026-03-29 10:45:41,632  -  INFO  -  127.0.0.1 - - [29/Mar/2026 10:45:41] "GET / HTTP/1.1" 200 -
+2026-03-29 10:47:21,146  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:47:21,194  -  INFO  -   * Restarting with stat
+2026-03-29 10:47:21,950  -  WARNING  -   * Debugger is active!
+2026-03-29 10:47:21,957  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:47:36,171  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:47:36,254  -  INFO  -   * Restarting with stat
+2026-03-29 10:47:36,753  -  WARNING  -   * Debugger is active!
+2026-03-29 10:47:36,769  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:47:42,846  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:47:42,899  -  INFO  -   * Restarting with stat
+2026-03-29 10:47:43,669  -  WARNING  -   * Debugger is active!
+2026-03-29 10:47:43,672  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:47:51,791  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:47:51,839  -  INFO  -   * Restarting with stat
+2026-03-29 10:47:52,309  -  WARNING  -   * Debugger is active!
+2026-03-29 10:47:52,317  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:47:53,339  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:47:53,382  -  INFO  -   * Restarting with stat
+2026-03-29 10:47:53,996  -  WARNING  -   * Debugger is active!
+2026-03-29 10:47:53,996  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:47:59,091  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:47:59,174  -  INFO  -   * Restarting with stat
+2026-03-29 10:47:59,782  -  WARNING  -   * Debugger is active!
+2026-03-29 10:47:59,782  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:02,826  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:02,905  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:03,219  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:03,221  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:08,283  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:08,315  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:08,833  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:08,837  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:11,901  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:11,983  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:12,624  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:12,624  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:14,639  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:14,710  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:15,103  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:15,107  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:18,142  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:18,192  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:18,688  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:18,692  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:20,727  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:20,828  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:21,404  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:21,404  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:23,438  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:23,471  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:24,109  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:24,123  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:27,199  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:27,233  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:27,651  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:27,665  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:33,770  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:33,875  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:34,393  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:34,398  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:36,453  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:36,496  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:36,815  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:36,823  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:39,876  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:40,008  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:40,392  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:40,396  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:41,437  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\train_model.py', reloading
+2026-03-29 10:48:41,485  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:42,161  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:42,165  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:53,353  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\run.py', reloading
+2026-03-29 10:48:53,380  -  INFO  -   * Restarting with stat
+2026-03-29 10:48:53,793  -  WARNING  -   * Debugger is active!
+2026-03-29 10:48:53,810  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:48:59,882  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\run.py', reloading
+2026-03-29 10:48:59,922  -  INFO  -   * Restarting with stat
+2026-03-29 10:49:00,578  -  WARNING  -   * Debugger is active!
+2026-03-29 10:49:00,578  -  INFO  -   * Debugger PIN: 186-071-697
+2026-03-29 10:49:01,600  -  INFO  -   * Detected change in 'd:\\program\\API\\arr_proj_back\\run.py', reloading
+2026-03-29 10:49:01,644  -  INFO  -   * Restarting with stat

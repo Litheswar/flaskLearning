@@ -1,0 +1,19 @@
+| Code | Meaning      |
+| ---- | ------------ |
+| 200  | success      |
+| 400  | bad request  |
+| 401  | unauthorized |
+| 500  | server error |
+
+
+👉 A Procfile tells a deployment platform:
+“How should I run your application?”
+
+🔹 web
+👉 This is a process type
+
+web = “this is a web server”
+Platforms use this to expose your app to the internet
+
+🔹 python run.py
+👉 Command to start your app
