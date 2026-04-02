@@ -1,42 +1,192 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>ML API</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salary Predictor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        /* The Waterfall Background */
+        .bg-waterfall {
+            position: absolute;
+            top: -5%;
+            left: -5%;
+            width: 110%;
+            height: 110%;
+            /* High resolution realistic waterfall image from Unsplash */
+            background: url("https://images.unsplash.com/photo-1432405972618-c60002a1b724?auto=format&fit=crop&w=2000&q=80") no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            /* Subtle breathing animation to give it 'life' */
+            animation: breathe 20s infinite alternate ease-in-out;
+            filter: brightness(0.6) saturate(1.2);
+        }
+
+        @keyframes breathe {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        /* Glassmorphism Card */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px 50px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            color: #fff;
+            max-width: 400px;
+            width: 90%;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: fadeUp 0.8s ease forwards 0.3s;
+        }
+
+        @keyframes fadeUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h2 {
+            font-weight: 600;
+            margin-bottom: 25px;
+            font-size: 26px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 16px;
+            outline: none;
+            transition: 0.3s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input:focus {
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255,255,255,0.4);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s transform, 0.3s box-shadow;
+            box-shadow: 0 4px 15px rgba(0, 114, 255, 0.4);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 114, 255, 0.6);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        #result {
+            margin-top: 25px;
+            font-size: 20px;
+            font-weight: 300;
+            min-height: 24px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+        }
+        
+        .currency {
+            font-weight: 600;
+            color: #a8ff78;
+        }
+    </style>
 </head>
 <body>
 
-<h2>Salary Predictor</h2>
+<div class="bg-waterfall"></div>
 
-<input id="exp" placeholder="Enter experience">
-
-<br><br>
-
-<button onclick="predict()">Predict</button>
-
-<h3 id="result"></h3>
+<div class="container">
+    <h2>Salary Predictor</h2>
+    <input type="number" id="exp" placeholder="Years of Experience" autocomplete="off" min="0" step="0.1">
+    <button onclick="predict()">Calculate Worth</button>
+    <div id="result"></div>
+</div>
 
 <script>
 async function predict() {
+    let expInput = document.getElementById("exp");
+    let exp = expInput.value;
+    let resultElement = document.getElementById("result");
 
-    let exp = document.getElementById("exp").value;
+    if (!exp || exp < 0) {
+        resultElement.style.color = '#ff6b6b';
+        resultElement.innerText = "Please enter a valid number";
+        return;
+    }
 
-    let response = await fetch("/predict", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "x-api-key": "mysecret123"
-        },
-        body: JSON.stringify({
-            experience: exp
-        })
-    });
+    resultElement.style.color = '#fff';
+    resultElement.innerText = "Calculating...";
 
-    let data = await response.json();
+    try {
+        let response = await fetch("/predict", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "x-api-key": "mysecret123"
+            },
+            body: JSON.stringify({
+                experience: exp
+            })
+        });
 
-    if (data.status === "success") {
-        document.getElementById("result").innerText = data.data.prediction;
-    } else {
-        document.getElementById("result").innerText = data.message;  // ✅ FIXED
+        let data = await response.json();
+
+        if (data.status === "success") {
+            // Formatting the output as currency
+            let formattedAmount = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(data.data.prediction);
+            resultElement.innerHTML = `Estimated: <span class="currency">${formattedAmount}</span> / yr`;
+        } else {
+            resultElement.style.color = '#ff6b6b';
+            resultElement.innerText = data.message;
+        }
+    } catch (error) {
+        resultElement.style.color = '#ff6b6b';
+        resultElement.innerText = "Error connecting to server";
     }
 }
 </script>
