@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML API</title>
+</head>
+<body>
+
+<h2>Salary Predictor</h2>
+
+<input id="exp" placeholder="Enter experience">
+
+<br><br>
+
+<button onclick="predict()">Predict</button>
+
+<h3 id="result"></h3>
+
+<script>
+async function predict() {
+
+    let exp = document.getElementById("exp").value;
+
+    let response = await fetch("/predict", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "mysecret123"
+        },
+        body: JSON.stringify({
+            experience: exp
+        })
+    });
+
+    let data = await response.json();
+
+    if (data.status === "success") {
+        document.getElementById("result").innerText = data.data.prediction;
+    } else {
+        document.getElementById("result").innerText = data.message;  // ✅ FIXED
+    }
+}
+</script>
+
+</body>
+</html>

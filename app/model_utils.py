@@ -1,9 +1,13 @@
 import pickle
 import numpy as np
-import os
 import logging
+import os
 
-with open('arr_proj_back/models/sal_model.pkl', "rb") as f:
+# Correct path
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MODEL_PATH = os.path.join(BASE_DIR, "models", "sal_model.pkl")
+
+with open(MODEL_PATH, "rb") as f:
     model = pickle.load(f)
 
 logging.info("ML model loaded successfully")
@@ -16,4 +20,4 @@ def predict_salary(experience):
 
     logging.info(f"Prediction result: {prediction[0]}")
 
-    return prediction[0]
+    return float(prediction[0])   # ✅ ensure JSON safe
