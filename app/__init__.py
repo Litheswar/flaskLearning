@@ -22,6 +22,14 @@ def create_app():
     # GLOBAL error handler
     @app.errorhandler(Exception)
     def handle_exception(e):
+        from werkzeug.exceptions import HTTPException
+        if isinstance(e, HTTPException):
+            return jsonify({
+                "status": "fail",
+                "message": e.description,
+                "data": None
+            }), e.code
+
         logging.error(f"Unhandled Exception: {e}")
         
         return jsonify({

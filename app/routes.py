@@ -10,6 +10,11 @@ def home():
     logging.info("Home route accessed")
     return render_template("index.html")  # ✅ fixed name
 
+@routes.route("/favicon.ico")
+def favicon():
+    # Returns an empty response with a 204 (No Content) status code
+    return "", 204
+
 @routes.route("/test")
 def test():
     logging.debug("Test route accessed")
